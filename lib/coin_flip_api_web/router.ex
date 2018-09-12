@@ -19,8 +19,6 @@ defmodule CoinFlipApiWeb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", CoinFlipApiWeb do
-  #   pipe_through :api
-  # end
+  forward "/api", Absinthe.Plug,
+    schema: CoinFlipApiWeb.Schema
 end
