@@ -21,4 +21,9 @@ defmodule CoinFlipApiWeb.Router do
 
   forward "/api", Absinthe.Plug,
     schema: CoinFlipApiWeb.Schema
+
+  forward "/graphiql",
+    Absinthe.Plug.GraphiQL,
+    schema: CoinFlipApiWeb.Schema,
+    interface: :simple
 end
