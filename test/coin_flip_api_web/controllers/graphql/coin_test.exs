@@ -1,6 +1,20 @@
 defmodule CoinFlipApiWeb.Graphql.CoinTest do
   use CoinFlipApiWeb.ConnCase
 
+  import Mox
+
+  setup :verify_on_exit!
+
+  setup do
+    seed_heads()
+    :ok
+  end
+
+  def seed_heads() do
+    CoinFlipApi.CoinMock
+    |> expect(:flip, fn -> %CoinFlipApi.Coins.Coin{value: "heads"} end)
+  end
+
   @query """
   {
     coin {

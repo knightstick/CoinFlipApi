@@ -43,7 +43,8 @@ defmodule CoinFlipApi.Mixfile do
       {:cowboy, "~> 1.0"},
       {:absinthe, "~> 1.4"},
       {:absinthe_plug, "~> 1.4"},
-      {:poison, "~> 3.0"}
+      {:poison, "~> 3.0"},
+      {:mox, "~> 0.4", only: :test}
     ]
   end
 

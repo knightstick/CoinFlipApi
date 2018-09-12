@@ -17,3 +17,5 @@ config :coin_flip_api, CoinFlipApi.Repo,
   database: "coin_flip_api_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :coin_flip_api, :coin, CoinFlipApi.CoinMock
